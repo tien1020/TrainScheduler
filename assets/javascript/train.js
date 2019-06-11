@@ -1,17 +1,14 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyCo7Cy4SCT4PwMKpUVCb4RE2j01PEr7afM",
-    authDomain: "coderbayy-81f0b.firebaseapp.com",
-    databaseURL: "https://coderbayy-81f0b.firebaseio.com",
-    projectId: "coderbayy-81f0b",
-    storageBucket: "",
-    messagingSenderId: "1056622035770",
-    appId: "1:1056622035770:web:e34e49e7866146db"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  var database = firebase.database();
-
+  apiKey: "AIzaSyAc6tcf1v4GWlZSOcT_TgvIlGMcIQ6pkes",
+  authDomain: "users-2ea9e.firebaseapp.com",
+  databaseURL: "https://users-2ea9e.firebaseio.com",
+  projectId: "users-2ea9e",
+  storageBucket: "",
+  messagingSenderId: "484082307593",
+  appId: "1:484082307593:web:2c480d0ed0d90752"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
   $("#submit").on("click", function(){
       var nameInput = $("#name").val().trim();
@@ -66,8 +63,8 @@ var firebaseConfig = {
 
         
  
-    $("tbody").append(tr);
+    $("tbody").append(tr)
    
  
  
- });
+ })
