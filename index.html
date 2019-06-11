@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Anytime Is Train Time</h1>
+            <h5>Choo Choo. Chee Chee.</h5>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        Current Train Schedule
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-borderbottom">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <td>Trenton Express</td>
+                                    <td>Trenton</td>
+                                    <td>25</td>
+                                    <td>05:35 PM</td>
+                                    <td>10</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Oregon Trail </td>
+                                    <td>Salem, Oregon</td>
+                                    <td>3600</td>
+                                    <td>01:39 PM</td>
+                                    <td>1154</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Midnight Carriage</td>
+                                    <td>Philadelpha</td>
+                                    <td>15</td>
+                                    <td>05:35 PM</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Sing Sing Caravan</td>
+                                    <td>Atlanta</td>
+                                    <td>45</td>
+                                    <td>05:53</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td>Boston Bus</td>
+                                    <td>Boston</td>
+                                    <td>65</td>
+                                    <td>05:50 PM</td>
+                                    <td>25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+      <div class="col-sm-12">
+
+         <div class="card">
+             <div class="card-header">
+                     Add Train
+             </div>
+             
+             <div class="card-body">
+                  <form action="">
+                      
+                    <div class="form-group">
+                      <label for="trainName">Train Name</label>
+                       <input type="text"  class="form-control" id="name" >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="destination">Destination</label>
+                       <input type="text"  class="form-control" id="destination" >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="time">First Train Time (HH:mm - military time)</label>
+                       <input type="text"  class="form-control" id="time" >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="frequency">Frequency</label>
+                       <input type="text"  class="form-control" id="frequency" >
+                    </div>
+
+                    <div class="text-left">
+                      <button class="btn btn-primary " id="submit" > Submit </button>
+
+                    </div>
+                    
+                  </form>
+               
+             </div>
+            
+         </div>
+    </div>
+    </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Script -->
+        <script src="./javascript/gif.js"></script>
+</body>
+
+</html>
