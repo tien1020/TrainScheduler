@@ -9,6 +9,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
 
   $("#submit").on("click", function(){
       var nameInput = $("#name").val().trim();
@@ -26,14 +27,28 @@ firebase.initializeApp(firebaseConfig);
 
   })
 
+
+
   database.ref().on("child_added",function(snapshot){
   
     var  name=snapshot.val().name;
     var destination=snapshot.val().destination;
     var time=snapshot.val().time;
     var frequency=snapshot.val().frequency;
+    var firstTimeConverted = moment(time, "HH:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
+    var currentTime = moment();
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+      console.log("DIFFERENCE IN TIME: " + diffTime);
+      var tRemainder = diffTime % frequency;
+      console.log(tRemainder);
+      var minutesAway = frequency - tRemainder;
+      console.log("MINUTES TILL TRAIN: " + minutesAway);
+      var nextTrain = moment().add(minutesAway, "minutes");
+      console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+  
  
-   
+    
  
  
       var tr=$("<tr>");
@@ -46,17 +61,18 @@ firebase.initializeApp(firebaseConfig);
      td2.text(destination)
     tr.append(td2)
  
- 
     var td3=$("<td>")
-     td3.text(time)
-    tr.append(td3)
+    td3.text(frequency)
+   tr.append(td3)
  
     var td4=$("<td>")
-     td4.text(frequency)
+     td4.text(time)
     tr.append(td4)
  
+  
+ 
     var td5=$("<td>")
-     td5.text(mimutesAway)
+     td5.text(minutesAway)
     tr.append(td5)
  
  
