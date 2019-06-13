@@ -84,3 +84,5 @@ var database = firebase.database();
  
  
  })
+
+ $("#time").text(moment().format("hh:mm: a"))
