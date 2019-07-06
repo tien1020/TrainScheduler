@@ -15,6 +15,7 @@ var database = firebase.database();
       var nameInput = $("#name").val().trim();
       var destinationInput =$("#destination").val().trim();
       var timeInput =$("#time").val().trim();
+      console.log(timeInput);
       var frequencyInput =$("#frequency").val().trim();
 
       database.ref().push({
@@ -36,8 +37,8 @@ var database = firebase.database();
     var time=snapshot.val().time;
     var frequency=snapshot.val().frequency;
     var firstTimeConverted = moment(time, "HH:mm").subtract(1, "years");
-    console.log(firstTimeConverted);
-    var currentTime = moment();
+    console.log("first time converted:", firstTimeConverted);
+    // var currentTime = moment();
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
       console.log("DIFFERENCE IN TIME: " + diffTime);
       var tRemainder = diffTime % frequency;
@@ -45,7 +46,7 @@ var database = firebase.database();
       var minutesAway = frequency - tRemainder;
       console.log("MINUTES TILL TRAIN: " + minutesAway);
       var nextTrain = moment().add(minutesAway, "minutes");
-      console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+      console.log("ARRIVAL TIME: " + moment(nextTrain).format("HH:mm"));
   
  
     
@@ -85,4 +86,4 @@ var database = firebase.database();
  
  })
 
- $("#time").text(moment().format("hh:mm: a"))
+ $("#currentTime").text(moment().format("hh:mm: a"))
