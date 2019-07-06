@@ -38,7 +38,7 @@ var database = firebase.database();
     var frequency=snapshot.val().frequency;
     var firstTimeConverted = moment(time, "HH:mm").subtract(1, "years");
     console.log("first time converted:", firstTimeConverted);
-    // var currentTime = moment();
+    var currentTime = moment();
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
       console.log("DIFFERENCE IN TIME: " + diffTime);
       var tRemainder = diffTime % frequency;
@@ -84,6 +84,6 @@ var database = firebase.database();
    
  
  
- })
+ });
 
- $("#currentTime").text(moment().format("hh:mm: a"))
+ $("#currentTime").text(moment().format("hh:mm: a"));
